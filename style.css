@@ -1,0 +1,94 @@
+* {
+	font-family: inherit;
+}
+
+body {
+	max-width: 60em;
+	margin: 1em auto;
+	font: 100%/1.5 sans-serif;
+}
+
+[mv-app="mavoice"] button {
+	background: linear-gradient(hsla(0,0%,100%,.5), transparent) hsl(220, 20%, 70%) border-box;
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,.5), 0 1px 2px 0 rgba(0,0,0,.1);
+	text-shadow: 0 1px 0 hsla(0,0%,100%,.5);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+	[mv-app="mavoice"] button:hover,
+	[mv-app="mavoice"] button:active,
+	[mv-app="mavoice"] button.pressed {
+		background: hsl(210, 64%, 51%);
+		color: white;
+		text-shadow: 0 -1px 1px #2361a4
+	}
+
+	[mv-app="mavoice"] button:active,
+	[mv-app="mavoice"] button.pressed {
+		box-shadow: inset 0 0 6px 3px #1657b5, 0 1px 0 0 #fff;
+	}
+
+[property=issues] {
+	display: flex;
+}
+
+[property=issues] + [property=issues] {
+	margin-top: 1.5em;
+}
+
+.votes {
+	display: flex;
+	flex-flow: column;
+	min-width: 6em;
+	margin-right: 1em;
+}
+
+	.votes > * {
+		border-radius: .3rem;
+	}
+
+	.vote-count {
+		padding: .5em;
+		border: 1px solid hsla(0,0%,0%,.2);
+		background: hsl(220, 60%, 99%);
+		box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+		text-align: center;
+	}
+
+		[property="votes"] {
+			display: block;
+			font-size: 250%;
+			line-height: 1;
+			font-weight: bold;
+		}
+
+	.votes button {
+		padding: .3em .5em;
+		box-sizing: border-box;
+		width: 100%;
+		margin-top: .3em;
+		font-size: 80%;
+	}
+
+	.votes button.mv-empty:not([mv-mode=edit]) {
+		display: block;
+	}
+
+[property=issues] .content {
+	flex: 1;
+}
+
+	.content > a:not(:hover) {
+		text-decoration: none;
+	}
+
+	.content h2 {
+		margin-top: 0;
+	}
+
+[property=issues] footer {
+	font-size: 80%;
+	color: rgba(0,0,0,.5);
+}
