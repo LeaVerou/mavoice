@@ -8,6 +8,10 @@ body {
 	font: 100%/1.5 sans-serif;
 }
 
+a {
+	color: hsl(220, 40%, 50%);
+}
+
 [mv-app="mavoice"] button {
 	background: linear-gradient(hsla(0,0%,100%,.5), transparent) hsl(220, 20%, 70%) border-box;
 	border: 1px solid rgba(0,0,0,.2);
@@ -35,7 +39,7 @@ body {
 }
 
 [property=issues] + [property=issues] {
-	margin-top: 1.5em;
+	margin-top: 3em;
 }
 
 .votes {
