@@ -10,7 +10,7 @@
 <body>
 
 <div mv-app="mavoice" mv-storage='https://api.github.com/repos/[owner]/[repo]/issues?labels=enhancement&sort=comments'
-     mv-mode="read" mv-plugins="sort">
+     mv-mode="read">
 	<meta property="owner" content="[url('owner') or 'mavoweb']">
 	<meta property="repo" content="[url('repo') or 'mavo']">
 	<article property="issues" mv-multiple mv-sort="-votes">
@@ -26,7 +26,7 @@
 			<a href="https://github.com/[owner]/[repo]/issues/[number]">
 				<h2 property="title">Title</h2>
 			</a>
-			<div property="body" mv-markdown-options="minHeadingLevel: 2">Description</div>
+			<div property="body" mv-markdown-options="headerLevelStart: 3">Description</div>
 			<footer>
 				<span property="comments">0</span> comments
 			</footer>
@@ -36,7 +36,9 @@
 
 <script src="https://dev.mavo.io/dist/mavo.js"></script>
 <script src="https://plugins.mavo.io/markdown/mavo-markdown.js"></script>
+<script src="https://rawgit.com/mavoweb/sort/master/mavo-sort.js"></script>
 <script src="debug.js"></script>
+<script src="mavoice.js"></script>
 
 </body>
 </html>
