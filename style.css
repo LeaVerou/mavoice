@@ -152,3 +152,8 @@ body > footer {
 	padding-top: 1em;
 	border-top: 1px solid rgb(0 0 0 / .1);
 }
+
+[property=body] img,
+[property=body] video {
+	max-width: 100%;
+}
