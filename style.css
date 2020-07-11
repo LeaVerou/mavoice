@@ -11,12 +11,26 @@ body {
 }
 
 a {
-	color: hsl(220, 40%, 50%);
+	color: hsl(220 40% 50%);
+}
+
+header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	margin: 2em 0;
+}
+
+header > .button {
+	margin: auto 0;
+	border-radius: .3rem;
+	text-decoration: none;
+	font-size: 150%;
 }
 
 h1 {
 	position: relative;
 	font-size: 400%;
+	margin: 0;
 }
 
 	h1 [property=repo] {
@@ -39,25 +53,32 @@ h1, h2, h3 {
 	line-height: 1;
 }
 
-[mv-app="mavoice"] button {
+button:not(.mv-ui),
+.button {
 	background: linear-gradient(hsla(0,0%,100%,.5), transparent) hsl(220, 20%, 70%) border-box;
 	border: 1px solid rgba(0,0,0,.2);
 	box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,.5), 0 1px 2px 0 rgba(0,0,0,.1);
 	text-shadow: 0 1px 0 hsla(0,0%,100%,.5);
 	font-weight: bold;
 	cursor: pointer;
+	padding: .3em .5em;
+	box-sizing: border-box;
+	color: black;
 }
 
-	[mv-app="mavoice"] button:hover,
-	[mv-app="mavoice"] button:active,
-	[mv-app="mavoice"] button.pressed {
+	button:not(.mv-ui):hover,
+	button:not(.mv-ui):active,
+	.button:hover,
+	.button:active,
+	button:not(.mv-ui).pressed {
 		background: hsl(210, 64%, 51%);
 		color: white;
 		text-shadow: 0 -1px 1px #2361a4
 	}
 
-	[mv-app="mavoice"] button:active,
-	[mv-app="mavoice"] button.pressed {
+	button:not(.mv-ui):active,
+	.button:active,
+	button:not(.mv-ui).pressed {
 		box-shadow: inset 0 0 6px 3px #1657b5, 0 1px 0 0 #fff;
 	}
 
@@ -96,8 +117,6 @@ h1, h2, h3 {
 		}
 
 	.votes button {
-		padding: .3em .5em;
-		box-sizing: border-box;
 		width: 100%;
 		margin-top: .3em;
 		font-size: 80%;
