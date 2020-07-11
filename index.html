@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MaVoice</title>
+	<link rel="shortcut icon" href="favicon.svg">
 	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
 	<link rel="stylesheet" href="style.css">
 
@@ -11,8 +12,19 @@
 
 <div mv-app="mavoice" mv-storage='https://api.github.com/repos/[repo]/issues?labels=[labels]&sort=comments'
      mv-mode="read">
+	<header>
+		<h1>
+			MaVoice
+			<span property="repo">[url('repo') or 'mavoweb/mavo']</span>
+		</h1>
+	</header>
+	<div class="mv-bar mv-ui">
+		<button class="mv-login">Login to Github to vote</button>
+	</div>
+
 	<meta property="username" content="">
-	<meta property="repo" content="[url('repo') or 'mavoweb/mavo']">
+
+
 	<meta property="labels" content="[url('labels') or 'enhancement']">
 	<article property="issues" mv-multiple id="issue[number]">
 		<div class="votes">
@@ -35,6 +47,10 @@
 		</div>
 	</article>
 </div>
+
+<footer>
+	Made by <a href="https://lea.verou.me">Lea Verou</a> with <a href="https://mavo.io">Mavo</a>
+</footer>
 
 <script src="https://get.mavo.io/mavo.js"></script>
 <script src="https://plugins.mavo.io/markdown/mavo-markdown.js"></script>

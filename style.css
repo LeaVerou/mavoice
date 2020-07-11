@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
 	font-family: inherit;
 }
@@ -5,11 +7,36 @@
 body {
 	max-width: 60em;
 	margin: 1em auto;
-	font: 100%/1.5 sans-serif;
+	font: 100%/1.5 Inter, Helvetica Neue, -apple-system, sans-serif;
 }
 
 a {
 	color: hsl(220, 40%, 50%);
+}
+
+h1 {
+	position: relative;
+	font-size: 400%;
+}
+
+	h1 [property=repo] {
+		display: block;
+		font-size: 50%;
+		letter-spacing: -.02em;
+	}
+
+	h1::before {
+		content: url(favicon.svg);
+		position: absolute;
+		top: 0;
+		right: 100%;
+		width: 1.1em;
+		height: 1.1em;
+	}
+
+h1, h2, h3 {
+	letter-spacing: -.04em;
+	line-height: 1;
 }
 
 [mv-app="mavoice"] button {
@@ -99,4 +126,10 @@ a {
 [property=issues] footer {
 	font-size: 80%;
 	color: rgba(0,0,0,.5);
+}
+
+body > footer {
+	margin-top: 1em;
+	padding-top: 1em;
+	border-top: 1px solid rgb(0 0 0 / .1);
 }

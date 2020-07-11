@@ -1,7 +1,8 @@
 // Check if current user has voted
 document.addEventListener("mv-login", async evt => {
 	let app = Mavo.all.mavoice;
-	app.root.children.username = evt.backend.username;
+
+	app.root.children.username.value = evt.backend.user.username;
 
 	let repo = app.root.children.repo.value;
 	let [owner, repoName] = repo.split("/");
