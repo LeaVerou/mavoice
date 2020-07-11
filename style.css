@@ -80,6 +80,10 @@ a {
 		display: block;
 	}
 
+	.votes button.pressed::after {
+		content: "d";
+	}
+
 [property=issues] .content {
 	flex: 1;
 }
