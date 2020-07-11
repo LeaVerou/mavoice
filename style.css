@@ -7,7 +7,15 @@
 body {
 	max-width: 60em;
 	margin: 1em auto;
+	padding: 1em;
 	font: 100%/1.5 Inter, Helvetica Neue, -apple-system, sans-serif;
+}
+
+
+@media (max-width: 600px) {
+	body {
+		font-size: 90%;
+	}
 }
 
 a {
@@ -15,13 +23,19 @@ a {
 }
 
 header {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	margin: 2em 0;
+	margin: 1em 0;
+}
+
+@media (min-width: 600px) {
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+	}
 }
 
 header > .button {
-	margin: auto 0;
+	display: block;
+	margin: auto .1em;
 	border-radius: .3rem;
 	text-decoration: none;
 	font-size: 150%;
