@@ -37,14 +37,15 @@ document.addEventListener("mv-login", async evt => {
 	});
 });
 
+// Sort data properly before rendering, since the API can't sort by reactions
+// and Mavo's sort plugin is borked
 Mavo.hooks.add("render-start", ({data}) => {
-	// Sort data properly
 	if (data) {
 		data = data.sort((a, b) => b.reactions["+1"] - a.reactions["+1"]);
 	}
 })
 
-// Enables the vote button
+// Makes the vote button work
 $.delegate(document, "click", ".votes button", evt => {
 	var app = Mavo.all.mavoice;
 	var github = app.storage;

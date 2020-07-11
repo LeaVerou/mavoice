@@ -11,7 +11,7 @@
 <body>
 
 <div mv-app="mavoice" mv-storage='https://api.github.com/repos/[repo]/issues?labels=[labels]&sort=comments'
-     mv-mode="read">
+     mv-mode="read" mv-plugins="markdown">
 	<header>
 		<h1>
 			MaVoice
@@ -53,9 +53,6 @@
 </footer>
 
 <script src="https://get.mavo.io/mavo.js"></script>
-<script src="https://plugins.mavo.io/markdown/mavo-markdown.js"></script>
-<!-- <script src="https://rawgit.com/mavoweb/sort/master/mavo-sort.js"></script> -->
-<script src="debug.js"></script>
 <script src="mavoice.js"></script>
 
 </body>
