@@ -53,6 +53,11 @@ h1 {
 		letter-spacing: -.02em;
 	}
 
+		h1 [property=repo]:not(:hover) {
+			text-decoration: none;
+			color: inherit;
+		}
+
 	h1::before {
 		content: url(favicon.svg);
 		position: absolute;
