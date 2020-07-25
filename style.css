@@ -145,10 +145,6 @@ button:not(.mv-ui),
 		display: block;
 	}
 
-	.votes button.pressed::after {
-		content: "d";
-	}
-
 [property=issues] .content {
 	flex: 1;
 }
@@ -175,4 +171,11 @@ body > footer {
 [property=body] img,
 [property=body] video {
 	max-width: 100%;
+}
+
+#vote-stats {
+	margin: 1em 0;
+	padding: .3em;
+	text-align: center;
+	background:  hsl(220 40% 95%);
 }

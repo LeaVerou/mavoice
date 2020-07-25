@@ -1,7 +1,8 @@
 // Check if current user has voted
 document.addEventListener("mv-login", async evt => {
 	let app = Mavo.all.mavoice;
-
+	await app.dataLoaded;
+	
 	let repo = app.root.children.repo.value;
 	let [owner, repoName] = repo.split("/");
 	let labels = app.root.children.labels.value;
@@ -30,7 +31,8 @@ document.addEventListener("mv-login", async evt => {
 		var issue = $("#issue" + n.number);
 
 		if (issue) {
-			$(".votes button", issue).classList.toggle("pressed", n.hasVoted);
+			let node = Mavo.Node.get(issue);
+			node.children.hasVoted.value = n.hasVoted;
 		}
 	});
 });
@@ -70,14 +72,14 @@ $.delegate(document, "click", ".votes button", evt => {
 				// Remove vote
 				return github.request(Mavo.Backend.Github.apiDomain + "reactions/" + data.id, null, "DELETE", headers).then(() => {
 					node.children.votes.value--;
-					evt.target.classList.remove("pressed");
+					node.children.hasVoted.value = false;
 					app.inProgress = false;
 				});
 			}
 			else {
 				// Created vote
 				node.children.votes.value++;
-				evt.target.classList.add("pressed");
+				node.children.hasVoted.value = true;
 				app.inProgress = false;
 			}
 		});

@@ -23,7 +23,7 @@
 	<div class="mv-bar mv-ui">
 		<button class="mv-login">Login to Github to vote</button>
 	</div>
-
+	<p id="vote-stats">You have voted on <strong>[count(hasVoted)]</strong> proposals</p>
 	<meta property="labels" content="[url('labels') or 'enhancement']">
 	<article property="issues" mv-multiple id="issue[number]">
 		<div class="votes">
@@ -31,7 +31,7 @@
 				<span property="votes" mv-alias="reactions" mv-path="+1">0</span>
 				votes
 			</div>
-			<button>Vote</button>
+			<button property="hasVoted" mv-attribute="aria-pressed" datatype="boolean" class="[if(hasVoted, 'pressed')]">Vote[if(hasVoted, 'd')]</button>
 		</div>
 		<div class="content">
 			<meta property="number">
